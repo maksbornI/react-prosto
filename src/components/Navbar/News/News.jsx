@@ -1,0 +1,17 @@
+import React from 'react';
+import s from './News.module.css';
+
+const News = () => {
+  return (
+    <div>
+    <div>
+      Юля вчера пила мгного просеки
+    </div>
+    <div>
+    <img src='https://cdn.the-village.ru/the-village.ru/post_image-image/-R1j8O9x_OKNE2WTY9KMoA.png' />
+  </div>
+  </div>
+  )
+}
+
+export default News;
