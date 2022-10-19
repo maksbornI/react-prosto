@@ -1,11 +1,12 @@
 .item {
     color: rgb(223, 130, 23);
+    padding: 10px;
 }
 
 .item img {
-    width: 20px;
-    height: 20px;
-    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
 
 }
 

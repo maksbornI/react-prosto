@@ -3,17 +3,27 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = () => {
+    const postData = [
+        {post: 'Hi, how are you? ' , like: '15'},
+        {post: 'It\'s my first post! ', like: '20'},
+
+    ]
     return (
-        <div>
+        <div className={s.item}>
             My posts
-            <div>
-                <textarea></textarea>
-                <button>Add post</button>
-                <button>Remove</button>
+
+            <div className={s.item}>
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button>Add post</button>
+                    <button>Remove</button>
+                </div>
             </div>
             <div className={s.posts}>
-                <Post message={'Hi, how are you? '} like='15'/>
-                <Post message={'It is my first post! '} like='20'/>
+                <Post message={postData[0].post} like={postData[0].like}/>
+                <Post message={postData[1].post} like={postData[1].like}/>
 
             </div>
         </div>
