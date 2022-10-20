@@ -3,7 +3,8 @@
     display: grid;
     width: 1000px;
     font-family: sans-serif;
-    text-shadow: 4px 4px 10px #eedede;
+    line-height: 1.5;
+    text-shadow: 4px 4px 20px #eedede;
     grid-template-areas:
   "h h"
   "n c";

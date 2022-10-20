@@ -3,11 +3,12 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = () => {
-    const postData = [
+    const posts = [
         {post: 'Hi, how are you? ' , like: '15'},
         {post: 'It\'s my first post! ', like: '20'},
 
     ]
+    let postEl = posts.map(post => <Post message={post.post} like={post.like}/> )
     return (
         <div className={s.item}>
             My posts
@@ -22,8 +23,9 @@ const MyPosts = () => {
                 </div>
             </div>
             <div className={s.posts}>
-                <Post message={postData[0].post} like={postData[0].like}/>
-                <Post message={postData[1].post} like={postData[1].like}/>
+                {postEl}
+                {/*<Post message={postData[0].post} like={postData[0].like}/>
+                <Post message={postData[1].post} like={postData[1].like}/>*/}
 
             </div>
         </div>
