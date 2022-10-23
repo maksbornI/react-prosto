@@ -1,14 +1,11 @@
 import React from 'react';
 import s from './MyPosts.module.css';
-import Post from './Post/Post';
+import Post from "./Post/Post";
 
-const MyPosts = () => {
-    const posts = [
-        {post: 'Hi, how are you? ' , like: '15'},
-        {post: 'It\'s my first post! ', like: '20'},
+const MyPosts = (props) => {
 
-    ]
-    let postEl = posts.map(post => <Post message={post.post} like={post.like}/> )
+    const postEl = props.posts.map(p => <Post message={p.post} like={p.like}/>)
+
     return (
         <div className={s.item}>
             My posts
@@ -23,13 +20,11 @@ const MyPosts = () => {
                 </div>
             </div>
             <div className={s.posts}>
-                {postEl}
-                {/*<Post message={postData[0].post} like={postData[0].like}/>
-                <Post message={postData[1].post} like={postData[1].like}/>*/}
+               {postEl}
 
             </div>
         </div>
     )
 }
 
-export default MyPosts;
+export default MyPosts

@@ -10,7 +10,8 @@ import Settings from './components/Navbar/Settings/Settings'
 import { BrowserRouter, Route } from 'react-router-dom';
 
 
-const App = () => {
+const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -18,8 +19,8 @@ const App = () => {
         <Navbar />
 
         <div className='app-wrapper-content'>
-          <Route path='/dialogs/' component={Dialogs} />
-          <Route path='/Profile' component={Profile} />
+          <Route path='/Dialogs' render={ () =><Dialogs dialogs={props.dialogs} messages={props.messages} />} />
+          <Route path='/Profile' render={ () =><Profile posts={props.posts}/>}/>
           <Route path='/News' component={News} />
           <Route path='/Music' component={Music} />
           <Route path='/Settings' component={Settings} />
