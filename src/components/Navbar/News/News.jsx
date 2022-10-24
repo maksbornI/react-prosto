@@ -8,7 +8,7 @@ const News = () => {
                 Юля вчера пила мгного просеки
             </div>
             <div>
-                <img src='https://cdn.the-village.ru/the-village.ru/post_image-image/-R1j8O9x_OKNE2WTY9KMoA.png'/>
+                <img src='https://cdn.the-village.ru/the-village.ru/post_image-image/-R1j8O9x_OKNE2WTY9KMoA.png' alt={"avatar"}/>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ const ProfileInfo = () => {
 
         <div className={s.item}>
 
-            <img src='https://wallpapercave.com/dwp1x/wp3933602.jpg'/>
+            <img src='https://www.epiroc.com/content/dam/web-only/successfactor/headers/epiroc-800x200px-it-1.png 'alt={"avatar"}/>
 
         </div>
         <div className={s.avatar}>

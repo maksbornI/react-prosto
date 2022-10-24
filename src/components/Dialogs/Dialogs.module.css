@@ -1,14 +1,17 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
-    padding: 10px;
+    grid-template-rows: auto;
+    grid-auto-columns: 100px auto;
+    grid-gap: 10px;
 }
+
 .dialogsItem {
     color: #d3b914;
     text-decoration: none;
 }
 .dialog {
-
+    grid-row-start: 2;
+    padding: 10px;
 }
 .active {
     color: #151411;
@@ -16,6 +19,17 @@
 .messages {
     color: #02987d;
     text-decoration: none;
+    padding: 10px;
+    grid-row-start: 2;
 }
 .message {
+    color: #151411;
+
+
+}
+.item img{
+    /*grid-area: h;*/
+    grid-column: 1 / -1;
+    width: 861px
+
 }
