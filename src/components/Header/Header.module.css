@@ -1,6 +1,8 @@
 .header {
     grid-area: h;
-    background-color: rgb(243, 134, 10);
+    background-origin: padding-box;
+    background-size: cover;
+    background-image: url(https://www.knowsleysafariexperience.co.uk/media/2664/conservation-ideas-for-kids-800x200px-title-02-reduce-single-use-plastic.jpg);
 
 }
 

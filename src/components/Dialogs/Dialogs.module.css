@@ -1,20 +1,25 @@
 .dialogs {
     display: grid;
     grid-template-rows: auto;
-    grid-auto-columns: 100px auto;
     grid-gap: 10px;
 }
-
 .dialogsItem {
     color: #d3b914;
     text-decoration: none;
+    padding-left: 6px;
+}
+.dialogsItem a.active {
+    color: #e70c0c;
+}
+.dialogsItem img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
 }
 .dialog {
-    grid-row-start: 2;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
     padding: 10px;
-}
-.active {
-    color: #151411;
 }
 .messages {
     color: #02987d;
@@ -23,13 +28,12 @@
     grid-row-start: 2;
 }
 .message {
-    color: #151411;
-
-
+    color: #efb70e;
 }
-.item img{
-    /*grid-area: h;*/
-    grid-column: 1 / -1;
-    width: 861px
-
+.item img {
+    grid-row-start: 1;
+    width: 838px
+}
+.addMess {
+    grid-row-start: 3
 }

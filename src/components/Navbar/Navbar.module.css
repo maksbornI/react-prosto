@@ -2,14 +2,21 @@
     grid-area: n;
     background-color: rgb(66, 78, 89);
     padding: 20px;
+    font-size: 17px;
+    align-self: start;
 
 }
+.friendsBar {
+    display: grid;
+    grid-column: auto;
+}
 
-.item a {
+.item a{
     color: #4ba281;
     text-decoration: none;
+
 }
 
 .item a.active {
-    color: #a69217
+    color: #e3c50d
 }
