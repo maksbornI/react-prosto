@@ -1,26 +1,26 @@
 import reportWebVitals from './reportWebVitals';
-import state, {subscriber} from "./Redux/state";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {addPost, updateNewPost, addMessage, updateNewMessage} from "./Redux/state";
+import store from "./Redux/state";
 
 
 export let rerenderEntireThree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state}
-                 addPost={addPost}
-                 updateNewPost={updateNewPost}
-                 addMessage={addMessage}
-                 updateNewMessage={updateNewMessage}/>
+            <App store={store}
+                 state={state}
+                 addPost={store.addPost.bind(store)}
+                 updateNewPost={store.updateNewPost.bind(store)}
+                 addMessage={store.addMessage.bind(store)}
+                 updateNewMessage={store.updateNewMessage.bind(store)}/>
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
 
-rerenderEntireThree(state)
-subscriber(rerenderEntireThree)
+rerenderEntireThree(store.getsState())
+store.subscriber(rerenderEntireThree)
 
 reportWebVitals();
