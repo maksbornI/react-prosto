@@ -2,9 +2,8 @@ let store = {
     callSubscriber() {
     },
     _state: {
-
         dialogsPage: {
-
+            newMessageText: '',
             dialogs: [
                 {id: 1, name: "Kola"},
                 {id: 2, name: "Misha"},
@@ -21,9 +20,7 @@ let store = {
                 {id: 5, message: "When you are come back? I want to see you at the next week!"},
                 {id: 7, message: "When you are come back?"}
             ],
-            newMessageText: ''
         },
-
         profilePage: {
             newPostText: '',
             posts: [
@@ -31,11 +28,13 @@ let store = {
                 {id: 2, post: 'It\'s my first post! ', like: 20}]
         }
     },
+    subscriber(observer){
+        this.callSubscriber = observer
+    },
     getsState()  {
         return this._state
     },
-    addPost() {
-
+    /*addPost() {
         let newPost = {
             id: 5,
             post: this._state.profilePage.newPostText,
@@ -44,28 +43,51 @@ let store = {
         this._state.profilePage.posts.push(newPost);
         this._state.profilePage.newPostText = '';
         this.callSubscriber(this._state);
-    },
-    updateNewPost (newText)  {
+    },*/
+/*    updateNewPost (newText)  {
         this._state.profilePage.newPostText = newText
         this.callSubscriber(this._state)
-    },
-    addMessage() {
-
-        let newMessageT = {
+    },*/
+/*    addMessage() {
+        let newMessage = {
             id: 5,
             message: this._state.dialogsPage.newMessageText,
         }
-        this._state.dialogsPage.messages.push(newMessageT);
+        this._state.dialogsPage.messages.push(newMessage);
         this._state.dialogsPage.newMessageText = '';
         this.callSubscriber(this._state)
 
-    },
-    updateNewMessage (newText) {
+    },*/
+/*    updateNewMessage (newText) {
         this._state.dialogsPage.newMessageText = newText;
         this.callSubscriber(this._state)
-    },
-    subscriber(observer){
-       this.callSubscriber = observer
+    },*/
+    dispatch(action) {
+        if (action.type === 'ADD-POST' ) {
+            let newPost = {
+                id: 5,
+                post: this._state.profilePage.newPostText,
+                like: 0
+            }
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this.callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST') {
+            this._state.profilePage.newPostText = action.newText
+            this.callSubscriber(this._state)
+        } else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                id: 5,
+                message: this._state.dialogsPage.newMessageText,
+            }
+            this._state.dialogsPage.messages.push(newMessage);
+            this._state.dialogsPage.newMessageText = '';
+            this.callSubscriber(this._state)
+        } else if ( action.type ==='UPDATE-NEW-MESSAGE') {
+            this._state.dialogsPage.newMessageText = action.newText;
+            this.callSubscriber(this._state)
+        }
+
     }
 }
 export default store
