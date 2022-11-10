@@ -6,12 +6,12 @@ import {addPostActionCreator, updateNewPostActionCreator} from "../../../Redux/s
 const MyPosts = (props) => {
 
     const postEl = props.posts.map(p => <Post message={p.post} like={p.like}/>)
-    let newPostElement = React.createRef();
+
     let addPost = () => {
         props.dispatch(addPostActionCreator());
     }
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
+    let onPostChange = (e) => {
+        let text = e.target.value;
         props.dispatch(updateNewPostActionCreator(text))
     }
     return (
@@ -20,7 +20,7 @@ const MyPosts = (props) => {
 
             <div className={s.item}>
                 <div>
-                    <textarea onChange={onPostChange} ref={newPostElement}
+                    <textarea onChange={onPostChange}
                               value={props.newPostText}/>
                 </div>
                 <div>
