@@ -1,18 +1,18 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
-
+import {addPostActionCreator, updateNewPostActionCreator} from "../../../Redux/state";
 
 const MyPosts = (props) => {
 
     const postEl = props.posts.map(p => <Post message={p.post} like={p.like}/>)
     let newPostElement = React.createRef();
     let addPost = () => {
-        props.dispatch({type: "ADD-POST"});
+        props.dispatch(addPostActionCreator());
     }
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch({type: 'UPDATE-NEW-POST', newText:text})
+        props.dispatch(updateNewPostActionCreator(text))
     }
     return (
         <div className={s.item}>
@@ -24,8 +24,9 @@ const MyPosts = (props) => {
                               value={props.newPostText}/>
                 </div>
                 <div>
-                    <button onClick={addPost}>Add post</button>
-                    <button>Remove</button>
+                    <button className={s.button_34} role={s.button_34}  onClick={addPost}>Add post</button>
+                    <button className={s.button_34}>Remove</button>
+
                 </div>
             </div>
             <div className={s.posts}>

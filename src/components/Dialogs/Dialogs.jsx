@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Messages from "./MessageItem/MessageItem";
+import {addMessageActionCreator, updateNewMessageActionCreator} from "../../Redux/state";
 
 const Dialogs = (props) => {
 
@@ -11,11 +12,11 @@ const Dialogs = (props) => {
         <Messages message={m.message} id={m.id}/>)
     let newPostElement = React.createRef();
     let addMessage = () => {
-        props.dispatch({ type: 'ADD-MESSAGE'});
+        props.dispatch(addMessageActionCreator());
     }
     let onMessageChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch({ type: 'UPDATE-NEW-MESSAGE', newText:text});
+        props.dispatch(updateNewMessageActionCreator(text));
     }
     return (<div className={s.dialogs}>
         <div className={s.item}>
@@ -35,11 +36,11 @@ const Dialogs = (props) => {
         </div>
         <div className={s.addMess}>
             <div>
-                <textarea onChange={onMessageChange} ref={newPostElement} value={props.newMessageText}/>
+                <textarea className={s.textarea} onChange={onMessageChange} ref={newPostElement} value={props.newMessageText}/>
             </div>
             <div>
-                <button onClick={addMessage}>Add message</button>
-                <button>Remove</button>
+                <button className={s.button_34} role={s.button_34} onClick={addMessage}>Add message</button>
+                <button className={s.button_34} role={s.button_34}>Remove</button>
             </div>
         </div>
     </div>)

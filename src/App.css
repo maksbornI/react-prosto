@@ -34,7 +34,9 @@
     font-weight: 600;
     -webkit-font-smoothing: antialiased;*/
 }
-
+.textarea {
+    background-color: #dcd8ab;
+}
 
 
 
