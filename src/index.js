@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from "./Redux/state";
+import store from "./Redux/redux-store";
 
 
 export let rerenderEntireThree = (state) => {
@@ -20,7 +20,9 @@ export let rerenderEntireThree = (state) => {
     );
 }
 
-rerenderEntireThree(store.getsState())
-store.subscriber(rerenderEntireThree)
+rerenderEntireThree(store.getState())
+store.subscribe( () => {
+    let state = store.getState()
+    rerenderEntireThree(state)})
 
 reportWebVitals();
