@@ -1,4 +1,4 @@
-import dialogsReducer from "./dialogs_reducer";
+/*import dialogsReducer from "./dialogs_reducer";
 import profileReducer from "./profile_reducer";
 
 
@@ -47,7 +47,7 @@ let store = {
     }
 }
 
-export default store
+export default store*/
 /*addPost() {
         let newPost = {
             id: 5,
