@@ -3,12 +3,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-
-import {Provider} from "./StoreContext";
+//import {Provider} from "./StoreContext";
 import store from "./Redux/redux-store";
+import {Provider} from "react-redux"
 
-
-export let rerenderEntireThree = () => {
+//export let rerenderEntireThree = () => {
     ReactDOM.render(
         <React.StrictMode>
             <Provider store={store}>
@@ -23,12 +22,12 @@ export let rerenderEntireThree = () => {
         </React.StrictMode>,
         document.getElementById('root')
     );
-}
-
-rerenderEntireThree(store.getState())
+//}
+//rerenderEntireThree()
+/*
 store.subscribe(() => {
-    let state = store.getState()
-    rerenderEntireThree(state)
+    rerenderEntireThree()
 })
+*/
 
 reportWebVitals();

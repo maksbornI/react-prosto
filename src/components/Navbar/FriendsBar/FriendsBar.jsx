@@ -5,20 +5,20 @@ import StoreContext from "../../../StoreContext";
 
 
 const FriendsBar = () => {
-
-
     return (
-        <StoreContext.Consumer>
-            {(store) => {
-                const firstThree = store.getState().dialogsPage.dialogs.slice(0, 3)
-                const friends = firstThree.map((f) => <Friend name={f.name}/>)
-                return <div className={s.text}>
-                    {friends}
-                </div>
-            }}
-        </StoreContext.Consumer>
-    )
 
+           (store) =>
+    {
+        const firstThree = store.dialogsPage.dialogs.slice(0, 3)
+        const friends = firstThree.map((f) => <Friend name={f.name}/>)
+        return <div className={s.text}>
+            {friends}
+        </div>
+
+    }
+    )
 }
+
+
 
 export default FriendsBar;

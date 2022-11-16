@@ -6,10 +6,8 @@ import Messages from "./MessageItem/MessageItem";
 
 const Dialogs = (props) => {
 
-    let dialogName = props.dialogs.map(dialog =>
-        <DialogItem name={dialog.name} id={dialog.id}/>)
-    let messageElement = props.messages.map(m =>
-        <Messages message={m.message} id={m.id}/>)
+    let dialogName = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
+    let messageElement = props.messages.map(m => <Messages message={m.message} id={m.id}/>)
     let addMessage = () => {
         props.addMessage();
     }
@@ -24,18 +22,16 @@ const Dialogs = (props) => {
                 alt={"avatar"}/>
         </div>
         <div className={s.dialog}>
-
             <div>
                 {dialogName}
             </div>
             <div>
                 {messageElement}
             </div>
-
         </div>
         <div className={s.addMess}>
             <div>
-                <textarea onChange={onMessageChange}  value={props.newMessageText}/>
+                <textarea onChange={onMessageChange} value={props.newMessageText}/>
             </div>
             <div>
                 <button className={s.button_34} role={s.button_34} onClick={addMessage}>Add message</button>
